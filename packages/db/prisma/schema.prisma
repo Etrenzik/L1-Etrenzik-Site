@@ -1,0 +1,368 @@
+// ─────────────────────────────────────────────────────
+// L1-ETRENZIK Litigation Workspace — Prisma Schema
+// DRAFT WORK PRODUCT — NOT LEGAL ADVICE
+// ─────────────────────────────────────────────────────
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [vector]
+}
+
+// ─── Auth & Access ─────────────────────────────────
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  role      Role     @default(CLIENT_VIEW)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  reviewComments ReviewComment[]
+  auditLogs      AuditLog[]
+
+  @@map("users")
+}
+
+enum Role {
+  ADMIN
+  ATTORNEY
+  REVIEWER
+  CLIENT_VIEW
+}
+
+// ─── Case ──────────────────────────────────────────
+
+model Case {
+  id            String   @id @default(uuid())
+  title         String
+  description   String?
+  plaintiff     String
+  defendant     String
+  jurisdictions String[] @default(["UNKNOWN"])
+  status        String   @default("active")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  documents     Document[]
+  events        Event[]
+  entities      Entity[]
+  invoices      Invoice[]
+  payments      Payment[]
+  loans         Loan[]
+  taxRecords    TaxRecord[]
+  allegations   Allegation[]
+  damages       Damage[]
+  workflows     WorkflowRun[]
+  legalIssues   LegalIssue[]
+  accountingRequests AccountingRequest[]
+
+  @@map("cases")
+}
+
+// ─── Documents & Evidence ──────────────────────────
+
+model Document {
+  id          String   @id @default(uuid())
+  caseId      String
+  filename    String
+  mimeType    String
+  filePath    String
+  status      String   @default("uploaded") // uploaded, parsing, parsed, indexed, error
+  uploadedAt  DateTime @default(now())
+  metadata    Json?
+  provenance  Json?    // chain of provenance for uploaded files
+
+  case     Case      @relation(fields: [caseId], references: [id])
+  chunks   Chunk[]
+  citations Citation[]
+
+  @@map("documents")
+}
+
+model Chunk {
+  id          String                    @id @default(uuid())
+  documentId  String
+  content     String
+  chunkIndex  Int
+  metadata    Json?
+  embedding   Unsupported("vector(1536)")?
+
+  document  Document   @relation(fields: [documentId], references: [id])
+  citations Citation[]
+
+  @@map("chunks")
+}
+
+model Citation {
+  id             String  @id @default(uuid())
+  documentId     String
+  chunkId        String?
+  eventId        String?
+  allegationId   String?
+  pageNumber     Int?
+  lineRange      String?
+  excerpt        String
+  evidenceStatus String  @default("alleged") // confirmed, alleged, disputed, missing
+
+  document   Document    @relation(fields: [documentId], references: [id])
+  chunk      Chunk?      @relation(fields: [chunkId], references: [id])
+  event      Event?      @relation(fields: [eventId], references: [id])
+  allegation Allegation? @relation(fields: [allegationId], references: [id])
+
+  @@map("citations")
+}
+
+// ─── Events & Timeline ─────────────────────────────
+
+model Event {
+  id            String   @id @default(uuid())
+  caseId        String
+  date          DateTime
+  title         String
+  description   String?
+  participants  String[] @default([])
+  status        String   @default("alleged") // confirmed, alleged, disputed, missing
+  jurisdictions String[] @default(["UNKNOWN"])
+  createdAt     DateTime @default(now())
+
+  case     Case       @relation(fields: [caseId], references: [id])
+  citations Citation[]
+
+  @@map("events")
+}
+
+// ─── Entities ──────────────────────────────────────
+
+model Entity {
+  id         String   @id @default(uuid())
+  caseId     String
+  type       String   // person, company, project, client
+  name       String
+  role       String?
+  metadata   Json?
+  createdAt  DateTime @default(now())
+
+  case Case @relation(fields: [caseId], references: [id])
+
+  @@map("entities")
+}
+
+// ─── Financial Records ─────────────────────────────
+
+model Invoice {
+  id             String   @id @default(uuid())
+  caseId         String
+  invoiceNumber  String?
+  issuer         String
+  recipient      String
+  amount         Decimal  @db.Decimal(12, 2)
+  issueDate      DateTime
+  dueDate        DateTime?
+  relatedProject String?
+  paymentStatus  String   @default("unpaid") // paid, unpaid, partial, disputed
+  metadata       Json?
+  createdAt      DateTime @default(now())
+
+  case     Case      @relation(fields: [caseId], references: [id])
+  payments Payment[]
+
+  @@map("invoices")
+}
+
+model Payment {
+  id        String   @id @default(uuid())
+  caseId    String
+  invoiceId String?
+  amount    Decimal  @db.Decimal(12, 2)
+  date      DateTime
+  method    String?
+  payer     String
+  payee     String
+  metadata  Json?
+  createdAt DateTime @default(now())
+
+  case    Case     @relation(fields: [caseId], references: [id])
+  invoice Invoice? @relation(fields: [invoiceId], references: [id])
+
+  @@map("payments")
+}
+
+model Loan {
+  id              String   @id @default(uuid())
+  caseId          String
+  borrower        String
+  lender          String
+  amount          Decimal  @db.Decimal(12, 2)
+  date            DateTime
+  repaid          Boolean  @default(false)
+  repaymentDate   DateTime?
+  repaymentEvidence String[] @default([])
+  notes           String?
+  createdAt       DateTime @default(now())
+
+  case Case @relation(fields: [caseId], references: [id])
+
+  @@map("loans")
+}
+
+model TaxRecord {
+  id              String   @id @default(uuid())
+  caseId          String
+  taxYear         Int
+  formType        String   // 1099, W-2, etc.
+  amount          Decimal  @db.Decimal(12, 2)
+  classification  String   // revenue, loan, disputed
+  reportedBy      String
+  reportedTo      String
+  repaymentEvidence String[] @default([])
+  notes           String?
+  createdAt       DateTime @default(now())
+
+  case Case @relation(fields: [caseId], references: [id])
+
+  @@map("tax_records")
+}
+
+model AccountingRequest {
+  id            String   @id @default(uuid())
+  caseId        String
+  requestedBy   String
+  requestedFrom String
+  requestType   String   // pnl, books, reconciliation, split_accounting
+  date          DateTime
+  response      String   @default("unknown") // provided, not_provided, partial, unknown
+  sourceDocIds  String[] @default([])
+  notes         String?
+  createdAt     DateTime @default(now())
+
+  case Case @relation(fields: [caseId], references: [id])
+
+  @@map("accounting_requests")
+}
+
+// ─── Legal Claims & Allegations ────────────────────
+
+model Allegation {
+  id                    String   @id @default(uuid())
+  caseId                String
+  claim                 String
+  description           String
+  evidenceStatus        String   @default("alleged") // confirmed, alleged, disputed, missing
+  missingProof          String[] @default([])
+  jurisdictions         String[] @default(["UNKNOWN"])
+  attorneyReviewRequired Boolean @default(true)
+  reviewStatus          String   @default("needs_review") // needs_review, reviewed, approved, rejected
+  createdAt             DateTime @default(now())
+
+  case     Case       @relation(fields: [caseId], references: [id])
+  citations Citation[]
+
+  @@map("allegations")
+}
+
+model LegalIssue {
+  id              String   @id @default(uuid())
+  caseId          String
+  theory          String
+  description     String
+  claimType       String   // breach_of_contract, unjust_enrichment, etc.
+  evidenceSupport String   // strong, moderate, weak, missing
+  jurisdictions   String[] @default(["UNKNOWN"])
+  keyFacts        String[] @default([])
+  missingProof    String[] @default([])
+  label           String   @default("candidate claim for attorney review")
+  reviewStatus    String   @default("needs_review")
+  createdAt       DateTime @default(now())
+
+  case Case @relation(fields: [caseId], references: [id])
+
+  @@map("legal_issues")
+}
+
+model Damage {
+  id             String   @id @default(uuid())
+  caseId         String
+  category       String   // direct, consequential, punitive, declaratory
+  description    String
+  amount         Decimal? @db.Decimal(12, 2)
+  amountMin      Decimal? @db.Decimal(12, 2)
+  amountMax      Decimal? @db.Decimal(12, 2)
+  basis          String
+  supportLevel   String   // supported, potential_requires_proof, speculative
+  sourceCitations String[] @default([])
+  createdAt      DateTime @default(now())
+
+  case Case @relation(fields: [caseId], references: [id])
+
+  @@map("damages")
+}
+
+// ─── Workflows ─────────────────────────────────────
+
+model Workflow {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  definition  Json     // WorkflowDefinition JSON
+  version     String   @default("1.0.0")
+  createdAt   DateTime @default(now())
+
+  runs WorkflowRun[]
+
+  @@map("workflows")
+}
+
+model WorkflowRun {
+  id         String   @id @default(uuid())
+  caseId     String
+  workflowId String
+  status     String   @default("queued") // queued, running, completed, failed, cancelled
+  input      Json?
+  output     Json?
+  events     Json?    // Array of WorkflowEvent
+  startedAt  DateTime @default(now())
+  completedAt DateTime?
+  error      String?
+
+  case     Case     @relation(fields: [caseId], references: [id])
+  workflow Workflow @relation(fields: [workflowId], references: [id])
+
+  @@map("workflow_runs")
+}
+
+// ─── Audit & Review ────────────────────────────────
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  action     String
+  entityType String
+  entityId   String?
+  userId     String?
+  metadata   Json?
+  createdAt  DateTime @default(now())
+
+  user User? @relation(fields: [userId], references: [id])
+
+  @@map("audit_logs")
+}
+
+model ReviewComment {
+  id         String   @id @default(uuid())
+  entityType String   // allegation, legal_issue, damage, draft
+  entityId   String
+  userId     String
+  comment    String
+  status     String   @default("open") // open, resolved, wont_fix
+  createdAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("review_comments")
+}
