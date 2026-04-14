@@ -7,13 +7,13 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
     remotePatterns: [
-      { protocol: "https", hostname: "case.etrenzik.com" },
+      { protocol: "https", hostname: "l1.etrenzik.com" },
     ],
   },
   env: {
     NEXT_PUBLIC_API_URL:
-      process.env.NEXT_PUBLIC_API_URL || "https://case-api.etrenzik.com",
-    NEXT_PUBLIC_SITE_URL: "https://case.etrenzik.com",
+      process.env.NEXT_PUBLIC_API_URL || "https://l1-api.etrenzik.com",
+    NEXT_PUBLIC_SITE_URL: "https://l1.etrenzik.com",
   },
 };
 
