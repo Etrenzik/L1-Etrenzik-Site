@@ -6,37 +6,114 @@
 // Seed timeline events for initial display
 const SEED_EVENTS = [
   {
+    id: "evt-000",
+    date: "2022-02-01",
+    title: "Business arrangement begins — Etrenzik / IS",
+    description:
+      "Troy Miller (Etrenzik) entered a business arrangement with IS to continue existing GA operations and merge LED lighting offerings, acting as CIO/COO. Agreed ~70/30 profit split + $85K salary, IS covering all expenses.",
+    participants: ["Troy Miller", "Sami Ali"],
+    status: "alleged" as const,
+    jurisdictions: ["GA", "AL"],
+    source: "User statement — written agreement needed",
+  },
+  {
+    id: "evt-000b",
+    date: "2022-08-01",
+    title: "Troy becomes Insperity PEO employee for IS (~11 months)",
+    description:
+      "Troy Miller transitioned from 1099 to Insperity PEO employee for IS for approximately 11 months.",
+    participants: ["Troy Miller", "Insperity", "Inergy Solutions, LLC"],
+    status: "alleged" as const,
+    jurisdictions: ["GA", "AL"],
+    source: "User statement — Insperity records needed",
+  },
+  {
+    id: "evt-000c",
+    date: "2024-01-01",
+    title: "~$50K LED products moved to IS warehouse (Huntsville, AL)",
+    description:
+      "Etrenzik moved approximately $50,000 of LED products into the IS warehouse. Never received consideration.",
+    participants: ["Troy Miller", "Etrenzik LLC", "Inergy Solutions, LLC"],
+    status: "alleged" as const,
+    jurisdictions: ["AL"],
+    source: "User statement — inventory records needed",
+  },
+  {
+    id: "evt-000d",
+    date: "2024-06-01",
+    title: "Troy returns to 1099 (mid-2024) — IS still controls as employer",
+    description:
+      "Troy returned to 1099 status. Despite this, IS continued operating as if Troy was an employee — IS credit card for laptops, travel, vehicle maintenance, gas, etc.",
+    participants: ["Troy Miller", "Sami Ali"],
+    status: "alleged" as const,
+    jurisdictions: ["GA", "AL"],
+    source: "User statement — credit card records needed",
+  },
+  {
     id: "evt-001",
     date: "2025-06-01",
-    title: "Sami Ali email: Alpharetta office closure",
+    title: "Sami Ali email: Atlanta office closure / termination",
     description:
-      "Email from Sami Ali stating closure of Alpharetta office, no more Georgia work, directing invoices to be submitted so books could be closed and amounts due paid.",
+      'Email from Sami Ali regarding Atlanta office closure: "submit invoices so books can be closed and amounts due paid." Acknowledged outstanding GCS projects. Last 2 weeks of 1099 pay (~$3,270) not paid.',
     participants: ["Sami Ali", "Troy Miller"],
     status: "confirmed" as const,
     jurisdictions: ["GA"],
     source: "Email — June 1, 2025",
   },
   {
-    id: "evt-002",
-    date: "2025-06-11",
-    title: "Accidental Etrenzik invoice sent from IS email",
+    id: "evt-001b",
+    date: "2025-06-02",
+    title: "Troy works with GCS to set up Etrenzik as authorized vendor",
     description:
-      "An Etrenzik invoice for approximately $19,987 was accidentally sent from an Inergy Solutions email account.",
-    participants: ["Troy Miller"],
-    status: "confirmed" as const,
+      "Per Ali's direction, Troy worked with GCS to set up Etrenzik as vendor. Several POs issued to IS for work not on Ali's list. PO transfer to Etrenzik complicated by GCS end-of-year and set-aside classification.",
+    participants: ["Troy Miller", "Gwinnett County Schools"],
+    status: "alleged" as const,
     jurisdictions: ["GA"],
-    source: "Invoice record / email logs",
+    source: "User statement — GCS records needed",
+  },
+  {
+    id: "evt-001c",
+    date: "2025-06-15",
+    title: "Troy continues 2 of 5-6 open POs, pays all product/labor",
+    description:
+      "Troy decided to continue installation on 2 POs outside Ali's stated list, paying for all product and labor as Etrenzik, anticipating POs would transfer or Ali would reimburse.",
+    participants: ["Troy Miller", "Etrenzik LLC", "Gwinnett County Schools"],
+    status: "alleged" as const,
+    jurisdictions: ["GA"],
+    source: "User statement — invoices INV-1268636 + INV-1268637 confirm payment",
   },
   {
     id: "evt-003",
     date: "2025-07-01",
-    title: "Sami Ali appearance at Gwinnett County Schools",
+    title: "Sami Ali/lawyer contacts GCS — defamation, negates closure",
     description:
-      "Sami Ali allegedly appeared at Gwinnett County Schools with a lawyer and stated Troy was stealing from Inergy Solutions, allegedly in connection with the June 11 invoice.",
+      "Sami Ali and legal representation contacted GCS, negated any intent to close GA office, and accused Troy of stealing and misrepresenting the closing of GA operations. Constitutes slander per se (accusation of a crime) and tortious interference.",
     participants: ["Sami Ali", "Unknown attorney", "Gwinnett County Schools staff"],
     status: "alleged" as const,
     jurisdictions: ["GA"],
-    source: "User allegation — requires witness corroboration",
+    source: "User allegation — requires GCS witness corroboration",
+  },
+  {
+    id: "evt-004",
+    date: "2025-07-02",
+    title: "GCS cancels all Etrenzik POs + $4,000 check — business destroyed",
+    description:
+      "GCS immediately stopped all business with Etrenzik and Troy Miller: cancellation of all open POs, $4,000 canceled check for product sold, and loss of $750K–$1M in future 12-month revenue (averaging $400K–$600K annually).",
+    participants: ["Gwinnett County Schools", "Etrenzik LLC"],
+    status: "alleged" as const,
+    jurisdictions: ["GA"],
+    source: "User allegation — GCS PO records + check cancellation needed",
+  },
+  {
+    id: "evt-005",
+    date: "2025-08-01",
+    title: "INV-1268636 ($37,725) + INV-1268637 ($16,860.99) sent to IS",
+    description:
+      "Two invoices totaling $54,585.99 sent to Sami Ali / IS for product and labor Etrenzik paid for on GCS POs.",
+    participants: ["Troy Miller", "Sami Ali"],
+    status: "confirmed" as const,
+    jurisdictions: ["GA"],
+    source: "Invoice records — INV-1268636 + INV-1268637 (8/1/2025)",
   },
 ];
 

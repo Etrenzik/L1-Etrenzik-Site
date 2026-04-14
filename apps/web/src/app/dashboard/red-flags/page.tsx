@@ -17,64 +17,91 @@ const RED_FLAGS: RedFlag[] = [
     id: "rf-001",
     category: "missing_proof",
     severity: "high",
-    title: "No written agreement for 70/30 revenue split",
+    title: "No written agreement for ~70/30 split + $85K salary",
     description:
-      "The alleged 70% Etrenzik / 30% Inergy Solutions allocation is based on an understanding but no written contract has been identified in the evidence.",
-    recommendation: "Search for email or text confirmations of the split arrangement. Attorney should assess oral contract viability under applicable state law.",
+      "The alleged ~70/30 profit split and $85K salary arrangement with IS (entered 2/1/2022) is based on an understanding but no written contract has been identified.",
+    recommendation: "Search for email or text confirmations of the arrangement terms. Attorney should assess oral contract viability under applicable state law.",
   },
   {
     id: "rf-002",
+    category: "missing_proof",
+    severity: "high",
+    title: "IS refuses to provide accounting — total damages unknown",
+    description:
+      "IS has refused all requests for P&L statements, revenue split records, and detail of 1099 chargebacks. The total amount owed cannot be calculated.",
+    recommendation: "File for compelled accounting. Subpoena IS financial records during discovery. Also subpoena GCS payment records to IS.",
+  },
+  {
+    id: "rf-003",
     category: "jurisdiction",
     severity: "high",
     title: "Venue/jurisdiction uncertainty — Alabama vs. Georgia vs. Federal",
     description:
-      "Etrenzik is Georgia-based, Inergy Solutions is Alabama-based (Huntsville). Work was performed in Georgia (Gwinnett). Proper venue requires attorney analysis.",
-    recommendation: "Attorney must determine whether to file in Georgia (where work was performed), Alabama (defendant's state), or federal court (diversity jurisdiction).",
-  },
-  {
-    id: "rf-003",
-    category: "missing_proof",
-    severity: "high",
-    title: "Gwinnett County Schools payment records not obtained",
-    description:
-      "We assert Gwinnett paid Inergy Solutions, but no Gwinnett payment records have been produced as evidence.",
-    recommendation: "Submit records request to Gwinnett County Schools for all payments to Inergy Solutions related to Etrenzik work.",
+      "Etrenzik is Georgia-based, IS is Alabama-based. Work performed in GA (GCS). 1099 involves federal tax. Multiple forums required.",
+    recommendation: "Attorney must determine filing venue. Strong GA basis: work performed in GA, office in GA, defamation occurred in GA, GCS is GA entity.",
   },
   {
     id: "rf-004",
-    category: "credibility",
-    severity: "medium",
-    title: "Accidental invoice may undermine intent narrative",
+    category: "missing_proof",
+    severity: "high",
+    title: "GCS defamation witnesses not identified",
     description:
-      "The June 11, 2025 invoice sent from an IS email account could be characterized by the defense as unauthorized billing, not an accident.",
-    recommendation: "Prepare explanation with technical evidence (email client configuration, account access history). Attorney should assess disclosure strategy.",
+      "The ~July 1, 2025 contact by Sami Ali/lawyer at GCS — accusing Troy of stealing — lacks identified GCS witnesses. This is the basis for slander per se and tortious interference claims.",
+    recommendation: "Identify specific GCS staff present. Obtain declarations or willingness to testify. This is critical for the highest-value claims ($750K–$1M).",
   },
   {
     id: "rf-005",
     category: "missing_proof",
-    severity: "medium",
-    title: "1099 dispute requires loan documentation",
+    severity: "high",
+    title: "~$85K 2023 + ~$20K 2024 unexplained 1099 charges — no detail provided",
     description:
-      "The claim that ~$16,000 was a repaid loan (not revenue) requires loan origination and repayment documentation.",
-    recommendation: "Gather wire/ACH transfer records, any promissory note, and communications about the loan.",
+      "IS has charged back approximately $85K in 2023 and $20K in 2024 on 1099 forms with no supporting documentation despite multiple requests.",
+    recommendation: "Document all written requests for detail. File for compelled accounting. Tax counsel should assess IRS correction path for both years.",
   },
   {
     id: "rf-006",
     category: "missing_proof",
     severity: "medium",
-    title: "Witnesses to Gwinnett meeting not identified",
+    title: "1099 loan dispute (~$16K) requires loan documentation",
     description:
-      "The alleged July 1, 2025 meeting at Gwinnett County Schools with accusation of theft lacks identified witnesses.",
-    recommendation: "Identify specific Gwinnett staff present and obtain declarations or willingness to testify.",
+      "The claim that ~$16,000 was a repaid loan (not revenue) on the 2024 1099 requires loan origination and repayment documentation.",
+    recommendation: "Gather wire/ACH transfer records, any promissory note, and communications about the loan.",
   },
   {
     id: "rf-007",
     category: "missing_proof",
     severity: "medium",
-    title: "P&L request documentation incomplete",
+    title: "LED product conversion — inventory records needed",
     description:
-      "Need evidence of repeated requests for P&L / accounting statements (dates, recipients, method of request).",
-    recommendation: "Compile all emails, texts, and other communications requesting accounting records.",
+      "~$50K LED products moved to IS warehouse in Huntsville + ~$20K existing LED sold from GA location — needs documentation.",
+    recommendation: "Compile inventory records, shipping/transfer documentation, and GA location sales records.",
+  },
+  {
+    id: "rf-008",
+    category: "credibility",
+    severity: "medium",
+    title: "Troy continued 2 POs outside Ali's stated list",
+    description:
+      "Troy continued work on 2 of 5-6 POs not listed by Ali as ones IS was willing to finish. Defense may argue unauthorized action.",
+    recommendation: "Prepare narrative: Ali directed Troy to transfer POs to Etrenzik; GCS couldn't transfer due to set-aside/year-end; Troy paid all costs from Etrenzik funds — IS had no involvement in product or labor.",
+  },
+  {
+    id: "rf-009",
+    category: "missing_proof",
+    severity: "medium",
+    title: "Insperity PEO records needed for misclassification claim",
+    description:
+      "Troy was employed through Insperity PEO for ~11 months, then returned to 1099. Records needed to support employee misclassification claim.",
+    recommendation: "Obtain Insperity employment records and IS credit card statements showing Troy's authorized expenses.",
+  },
+  {
+    id: "rf-010",
+    category: "timing",
+    severity: "medium",
+    title: "GCS end-of-year PO transfer complications",
+    description:
+      "POs couldn't be transferred from IS to Etrenzik because it was GCS end of year and they had been classified as a set-aside under IS.",
+    recommendation: "Obtain GCS procurement records documenting the set-aside classification and transfer barrier. This contextualizes Troy's decision to continue POs.",
   },
 ];
 

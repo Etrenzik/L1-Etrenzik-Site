@@ -28,16 +28,16 @@ export default function DashboardPage() {
 
         <h1 className="text-3xl font-bold mb-2">Litigation Workspace</h1>
         <p className="text-gray-600">
-          Etrenzik LLC v. Inergy Solutions LLC — Case Preparation Dashboard
+          Etrenzik LLC v. Inergy Solutions, LLC — Case Preparation Dashboard
         </p>
       </div>
 
       {/* Case Quick Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         <StatCard label="Documents" value="—" />
-        <StatCard label="Events" value="—" />
-        <StatCard label="Unpaid Invoices" value="~$50,000" status="disputed" />
-        <StatCard label="Open Issues" value="—" />
+        <StatCard label="Events" value="15" />
+        <StatCard label="Confirmed Invoices" value="$54,586" status="disputed" />
+        <StatCard label="Claims" value="10" />
       </div>
 
       {/* Navigation Grid */}
@@ -67,7 +67,7 @@ export default function DashboardPage() {
         <div className="bg-white border rounded-lg p-6">
           <h2 className="font-semibold text-lg mb-3">Defendant</h2>
           <dl className="space-y-2 text-sm">
-            <div><dt className="text-gray-500">Company</dt><dd className="font-medium">Inergy Solutions LLC</dd></div>
+            <div><dt className="text-gray-500">Company</dt><dd className="font-medium">Inergy Solutions, LLC</dd></div>
             <div><dt className="text-gray-500">Principal</dt><dd className="font-medium">Sami Ali</dd></div>
             <div><dt className="text-gray-500">State</dt><dd className="font-medium">Alabama (Huntsville)</dd></div>
           </dl>

@@ -5,7 +5,7 @@
 
 ## Overview
 
-MCP-based agentic RAG litigation workspace for **Etrenzik LLC v. Inergy Solutions LLC**. Built as a TypeScript Turborepo monorepo.
+MCP-based agentic RAG litigation workspace for **Etrenzik LLC v. Inergy Solutions, LLC**. Built as a TypeScript Turborepo monorepo.
 
 ## Quick Start
 
@@ -80,11 +80,27 @@ l1-etrenzik/
 
 ## Case Context
 
-**Etrenzik LLC v. Inergy Solutions LLC**
+**Etrenzik LLC v. Inergy Solutions, LLC**
+
+Troy Miller, owner of Etrenzik, LLC, entered into a business arrangement with IS on Feb 1, 2022 to continue Etrenzik's existing GA operations and merge its LED lighting sales/installation offerings for IS, acting as CIO/COO. Agreed approximately 70/30 profit split and $85K salary in Etrenzik's favor, IS covering all expenses.
+
+The relationship started as 1099 (Feb 2022), switched to Insperity PEO employment for ~11 months, then returned to 1099 mid-2024. Despite 1099 status, IS operated as if Troy was an employee (IS credit card for laptops, travel, vehicle maintenance, gas).
+
+IS terminated the arrangement via email on 6/1/2025. IS has failed to pay the agreed revenue split and last 2 weeks of 1099 pay (~$3,270). Total owed is unknown — IS refuses to provide accounting despite repeated requests.
 
 - **Plaintiff:** Etrenzik LLC (Troy Miller) — Georgia
-- **Defendant:** Inergy Solutions LLC (Sami Ali) — Alabama
-- **Core Issues:** Non-payment (~$50K), disputed 1099 (~$16K loan vs revenue), failure to produce P&L, alleged business interference at Gwinnett County Schools
+- **Defendant:** Inergy Solutions, LLC (Sami Ali) — Alabama (Huntsville)
+- **Core Issues:**
+  - Non-payment of revenue split + final 1099 pay (~$3,270)
+  - Defamation/slander per se at GCS (accusation of stealing) → loss of $400K–$600K annual revenue + $750K–$1M future revenue
+  - Tortious interference with GCS business relationship (canceled POs, $4K check, all future work)
+  - Unreimbursed PO invoices: INV-1268636 ($37,725) + INV-1268637 ($16,860.99)
+  - ~$50K LED products moved to IS warehouse, never compensated
+  - ~$20K existing LED inventory sold without compensation
+  - Improper 2024 1099 (~$16K loan classified as income + ~$20K unexplained expenses)
+  - ~$85K unexplained 2023 1099 chargebacks (detail never provided)
+  - Failure to produce P&L/accounting records
+  - Employee vs. 1099 misclassification
 - **Jurisdictions:** Georgia, Alabama, Federal (tax)
 
 ## Guardrails

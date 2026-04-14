@@ -7,29 +7,36 @@ const KNOWN_PERSONS = [
   {
     id: "person-001",
     name: "Troy Miller",
-    role: "Plaintiff / Principal — Etrenzik LLC",
-    relevance: "Principal of Etrenzik. Performed work for Gwinnett County Schools. Alleges non-payment and business interference.",
+    role: "Plaintiff / Principal — Etrenzik LLC (CIO/COO of IS arrangement)",
+    relevance: "Principal of Etrenzik. Entered ~70/30 profit split + $85K salary arrangement with IS on 2/1/2022. Performed LED lighting work for GCS. Alleges non-payment, defamation, tortious interference, conversion, improper 1099.",
     type: "party",
   },
   {
     id: "person-002",
     name: "Sami Ali",
-    role: "Counterparty / Principal — Inergy Solutions LLC",
-    relevance: "Principal of Inergy Solutions. Sent June 1, 2025 closure email. Alleged to have appeared at Gwinnett with attorney.",
+    role: "Counterparty / Principal — Inergy Solutions, LLC",
+    relevance: "Principal of IS. Sent June 1, 2025 closure email. On/about July 1, 2025 contacted GCS with lawyer — accused Troy of stealing, negated closure — destroying Etrenzik's GCS business. Refuses to provide accounting.",
     type: "party",
   },
   {
     id: "person-003",
     name: "Unknown Attorney",
-    role: "Attorney accompanying Sami Ali",
-    relevance: "Present at alleged July 1, 2025 Gwinnett County Schools meeting. Identity unknown.",
+    role: "Attorney accompanying Sami Ali at GCS",
+    relevance: "Present when Sami Ali contacted GCS on/about July 1, 2025. Negated GA office closure. Identity unknown.",
     type: "witness",
   },
   {
     id: "person-004",
     name: "Gwinnett County Schools Staff",
     role: "Client / Third-party witness(es)",
-    relevance: "Present during alleged July 1 meeting. Can corroborate or dispute allegations of theft accusation.",
+    relevance: "Witnessed Sami Ali/lawyer contact. Can testify to: accusations made, PO cancellations, $4K check cancellation, business relationship termination.",
+    type: "witness",
+  },
+  {
+    id: "person-005",
+    name: "Insperity Representative",
+    role: "PEO employer records",
+    relevance: "Troy was employed through Insperity as PEO for IS for ~11 months. Records relevant to employment vs. 1099 misclassification claim.",
     type: "witness",
   },
 ];
@@ -71,14 +78,24 @@ export default function WitnessesPage() {
         <div className="bg-white border rounded-lg p-4">
           <h4 className="font-semibold mb-2">For Sami Ali</h4>
           <ol className="list-decimal list-inside text-sm text-gray-700 space-y-2">
-            <li>Describe the revenue allocation arrangement between Inergy Solutions and Etrenzik LLC.</li>
-            <li>What payments did Gwinnett County Schools make to Inergy Solutions for work performed by Etrenzik?</li>
-            <li>What amounts were paid to Etrenzik from those Gwinnett payments?</li>
-            <li>Please explain the June 1, 2025 email regarding closure of the Alpharetta office.</li>
-            <li>Did you appear at Gwinnett County Schools on or around July 1, 2025? Who was with you?</li>
-            <li>What statements did you make at that meeting regarding Troy Miller or Etrenzik?</li>
-            <li>Explain the basis for the 2024 1099 issued to Troy Miller / Etrenzik for approximately $16,000.</li>
-            <li>Were P&L statements produced in response to requests from Etrenzik? If so, produce them.</li>
+            <li>Describe the business arrangement entered into with Etrenzik LLC and Troy Miller on or about February 1, 2022.</li>
+            <li>What were the agreed terms for profit split, salary, and expense coverage?</li>
+            <li>What is the total revenue IS received from GCS for work performed by Etrenzik / Troy Miller?</li>
+            <li>How much of that revenue was paid to Etrenzik / Troy Miller per the agreed split?</li>
+            <li>Why was the last 2 weeks of 1099 pay (~$3,270) not paid after termination?</li>
+            <li>Please explain the June 1, 2025 email regarding Atlanta office closure and the statement to "submit invoices so books can be closed and amounts due paid."</li>
+            <li>On or about July 1, 2025, did you or your attorney contact GCS regarding Troy Miller or Etrenzik?</li>
+            <li>Did you accuse Troy Miller of stealing from Inergy Solutions? What was the factual basis?</li>
+            <li>Did you negate any intent to close the GA office after your June 1 email stated otherwise?</li>
+            <li>Explain INV-1268636 ($37,725) and INV-1268637 ($16,860.99) — why have these not been paid?</li>
+            <li>Explain the basis for the 2024 1099 classifying approximately $16,000 of repaid loan funds as income.</li>
+            <li>Explain the approximately $20,000 in unexplained expenses on the 2024 1099.</li>
+            <li>Explain the approximately $85,000 charged back to Troy Miller on the 2023 1099. Provide the detail and accounting.</li>
+            <li>What happened to the approximately $50,000 in LED products Etrenzik moved into the IS Huntsville warehouse?</li>
+            <li>Why was Etrenzik not compensated for the approximately $20,000 of existing LED inventory sold from the GA location?</li>
+            <li>Has Etrenzik or Troy Miller requested P&L statements or accounting records? Have you provided them?</li>
+            <li>Describe Troy Miller's work arrangement — was he treated as an employee or independent contractor? What expenses did IS pay via credit card?</li>
+            <li>What was the relationship with Insperity? Why was Troy transitioned to/from PEO employee status?</li>
           </ol>
         </div>
       </div>

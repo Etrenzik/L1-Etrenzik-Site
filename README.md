@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚖️ Etrenzik LLC v. Inergy Solutions LLC
+# ⚖️ Etrenzik LLC v. Inergy Solutions, LLC
 
 ### Litigation Workspace & Case Preparation Platform
 
@@ -51,7 +51,7 @@
 
 ## 🔍 Overview
 
-**MCP-based agentic RAG litigation workspace** built as a TypeScript Turborepo monorepo for the civil dispute **Etrenzik LLC v. Inergy Solutions LLC**.
+**MCP-based agentic RAG litigation workspace** built as a TypeScript Turborepo monorepo for the civil dispute **Etrenzik LLC v. Inergy Solutions, LLC**.
 
 This platform provides:
 
@@ -573,12 +573,20 @@ checkProhibitedContent(text: string) // Blocks disallowed patterns
 
 ## 📋 Case Context
 
+### Case Summary
+
+Troy Miller, owner of Etrenzik, LLC, entered into a business arrangement with Inergy Solutions, LLC ("IS") on **February 1, 2022** to continue Etrenzik's existing operations in Georgia and merge its identical LED lighting sales and installation offerings for IS, acting as the CIO/COO. The arrangement was based on an agreed approximately **70/30 profit split** and **$85K in salary** in Etrenzik's favor, with IS covering all expenses (operating, sales, travel, meals/entertainment, etc.).
+
+The relationship started as a **1099 arrangement in February 2022**. For a period of approximately **11 months**, Troy Miller was an employee of **Insperity** as a PEO for Inergy Solutions, then reverted to 1099 in mid-2024. Despite 1099 classification, Mr. Ali operated as if Troy was an employee — paying for laptops, travel, vehicle maintenance, gas, etc. via an IS-supplied credit card.
+
+IS, through its owner Sami Ali, has **failed to pay Etrenzik its agreed share of the revenue split** and the **last 2 weeks of 1099 pay (~$3,270)** after terminating the agreement via email on **June 1, 2025**, totaling an untold amount due to several requests for this information with zero response from Sami Ali or Inergy Solutions.
+
 ### Parties
 
 | Role | Entity | Principal | Jurisdiction |
 |:-----|:-------|:----------|:------------|
 | 🔵 **Plaintiff** | Etrenzik LLC | Troy Miller | Georgia |
-| 🔴 **Defendant** | Inergy Solutions LLC | Sami Ali | Alabama |
+| 🔴 **Defendant** | Inergy Solutions, LLC | Sami Ali | Alabama (Huntsville) |
 
 ### Key Timeline
 
@@ -588,36 +596,61 @@ gantt
     dateFormat YYYY-MM-DD
     axisFormat %b %Y
 
+    section 2022
+    Business arrangement begins (1099)         :a0, 2022-02-01, 365d
+
+    section 2022–2023
+    Insperity PEO period (~11 months)          :a0b, 2022-08-01, 330d
+    ~$85K charged back in 1099 expenses (2023) :crit, a0c, 2023-01-01, 365d
+
     section 2024
-    Gwinnett work begins                       :a1, 2024-01-01, 365d
-    Disputed 1099 period (~$16K)               :crit, a2, 2024-01-01, 365d
+    Gwinnett County Schools work               :a1, 2024-01-01, 365d
+    Return to 1099 (mid-2024)                  :milestone, m0, 2024-06-01, 0d
+    Disputed 1099 period (~$16K loan + ~$20K unexplained) :crit, a2, 2024-01-01, 365d
+    ~$50K LED product moved to IS warehouse    :crit, a2b, 2024-01-01, 60d
+    ~$20K existing LED inventory sold w/o compensation :crit, a2c, 2024-01-01, 120d
 
     section 2025
-    Sami email — Alpharetta closing            :milestone, m1, 2025-06-01, 0d
-    Accidental invoice from IS email (~$19,987):crit, milestone, m2, 2025-06-11, 0d
-    Sami at Gwinnett with lawyer               :crit, milestone, m3, 2025-07-01, 0d
+    Sami email — Atlanta office closure        :milestone, m1, 2025-06-01, 0d
+    Etrenzik set up as GCS vendor              :a3, 2025-06-02, 29d
+    Sami/lawyer contact GCS — defamation       :crit, milestone, m3, 2025-07-01, 0d
+    GCS cancels Etrenzik POs + $4K check       :crit, milestone, m4, 2025-07-02, 0d
+    INV-1268636 ($37,725) sent to IS           :milestone, m5, 2025-08-01, 0d
+    INV-1268637 ($16,860.99) sent to IS        :milestone, m6, 2025-08-01, 0d
 ```
 
 ### Candidate Claims
 
 | # | Claim | Evidence | Priority |
 |:-:|:------|:--------:|:--------:|
-| 1 | **Breach of Contract** — Non-payment of ~$50K | 🟡 Alleged | 🔴 High |
-| 2 | **Account Stated** — June 1 email + unpaid balance | 🟢 Partial | 🔴 High |
-| 3 | **Unjust Enrichment** — IS retained Etrenzik's share | 🟡 Alleged | 🟡 Medium |
-| 4 | **Tortious Interference** — Gwinnett incident | 🟡 Alleged | 🔴 High |
-| 5 | **Defamation / Slander** — "stealing" accusation | 🟡 Alleged | 🟡 Medium |
-| 6 | **Declaratory Relief** — 1099 reclassification | 🟡 Alleged | 🔴 High |
-| 7 | **Accounting** — Compel P&L production | 🟡 Alleged | 🟡 Medium |
+| 1 | **Breach of Contract** — Non-payment of revenue split + final 1099 pay (~$3,270) | 🟡 Alleged | 🔴 High |
+| 2 | **Account Stated** — June 1 email: "submit invoices so books can be closed and amounts due paid" | 🟢 Partial | 🔴 High |
+| 3 | **Unjust Enrichment** — IS retained Etrenzik's share of GCS revenue + unreimbursed inv ($54,585.99) | 🟡 Alleged | 🔴 High |
+| 4 | **Tortious Interference** — Sami/lawyer contacted GCS, negated closure, accused Troy of stealing → all POs canceled, $4K check canceled, $750K–$1M future revenue lost | 🟡 Alleged | 🔴 High |
+| 5 | **Defamation / Slander Per Se** — Accusation of a crime (stealing/misrepresenting) to GCS | 🟡 Alleged | 🔴 High |
+| 6 | **Declaratory Relief** — 1099 reclassification: ~$16K loan as income + ~$20K unexplained expenses | 🟡 Alleged | 🔴 High |
+| 7 | **Accounting** — Compel P&L production, detail of ~$85K 2023 1099 charges, revenue split records | 🟡 Alleged | 🔴 High |
+| 8 | **Conversion** — ~$50K LED products moved to IS warehouse, never compensated + ~$20K LED inventory sold without compensation | 🟡 Alleged | 🔴 High |
+| 9 | **Misclassification / Employment** — IS treated Troy as employee (credit card, equipment, travel) while classifying as 1099 | 🟡 Alleged | 🟡 Medium |
 
 ### Financial Summary
 
 | Category | Amount | Status |
 |:---------|-------:|:------:|
-| Unpaid invoices (Gwinnett work) | ~$50,000 | 🟡 Alleged |
-| Disputed 1099 (loan vs. revenue) | ~$16,000 | 🟡 Alleged |
-| Accidental invoice from IS email | ~$19,987 | 🟢 Confirmed |
+| Unpaid revenue split (GCS work) | Unknown — IS refuses to provide | 🟡 Alleged |
+| Final 1099 pay (last 2 weeks) | ~$3,270 | 🟡 Alleged |
+| INV-1268636 (product + labor reimbursement) | $37,725.00 | 🟢 Invoiced 8/1/2025 |
+| INV-1268637 (product + labor reimbursement) | $16,860.99 | 🟢 Invoiced 8/1/2025 |
+| LED products moved to IS warehouse | ~$50,000 | 🟡 Alleged |
+| Existing LED inventory sold w/o compensation | ~$20,000 | 🟡 Alleged |
+| Improper 2024 1099 (loan classified as income) | ~$16,000 | 🟡 Alleged |
+| Unexplained 2024 1099 expenses | ~$20,000 | 🟡 Alleged |
+| 2023 1099 chargebacks (undetailed) | ~$85,000 | 🟡 Alleged |
+| GCS canceled check | $4,000 | 🟢 Confirmed |
+| Lost GCS annual revenue | $400K–$600K | 🟡 Alleged |
+| Lost 12-month future GCS revenue | $750K–$1M | 🟡 Speculative |
 | Revenue split understanding | 70/30 | 🟡 Alleged |
+| Agreed salary | $85K | 🟡 Alleged |
 
 ---
 
@@ -627,25 +660,32 @@ gantt
 
 | # | Evidence | Impact | Severity |
 |:-:|:---------|:-------|:--------:|
-| 1 | Written agreement for 70/30 split | Breach of contract claim depends on it | 🔴 **HIGH** |
-| 2 | Individual invoices with dates/amounts | Damages itemization | 🔴 **HIGH** |
+| 1 | Written agreement for 70/30 split + $85K salary | Breach of contract claim depends on it | 🔴 **HIGH** |
+| 2 | Revenue split accounting from IS | Unable to calculate total owed — IS refuses to provide | 🔴 **HIGH** |
 | 3 | Loan documentation (~$16K) | Critical for 1099 dispute | 🔴 **HIGH** |
-| 4 | Repayment records for loan | Even if loan proven, must show repayment | 🔴 **HIGH** |
-| 5 | Gwinnett witness statements | Corroborates interference/defamation | 🟡 **MED** |
-| 6 | Exact words spoken at Gwinnett | Defamation requires specific false statements | 🟡 **MED** |
-| 7 | P&L request documentation | Supports accounting claim + IS refusal | 🟡 **MED** |
-| 8 | Gwinnett payment records to IS | Establishes damages baseline | 🟡 **MED** |
+| 4 | Detail of ~$85K 2023 1099 chargebacks | IS has never provided accounting | 🔴 **HIGH** |
+| 5 | Detail of ~$20K unexplained 2024 1099 expenses | IS has never provided accounting | 🔴 **HIGH** |
+| 6 | GCS witness statements re: defamation/slander | Corroborates interference + slander per se | 🔴 **HIGH** |
+| 7 | Documentation of ~$50K LED products moved to IS warehouse | Supports conversion claim | 🟡 **MED** |
+| 8 | Documentation of ~$20K LED sold w/o compensation | Supports conversion claim | 🟡 **MED** |
+| 9 | GCS PO records (open + canceled) | Quantifies tortious interference damages | 🟡 **MED** |
+| 10 | P&L request documentation | Supports accounting claim + IS refusal | 🟡 **MED** |
+| 11 | Insperity PEO employment records | Supports misclassification claim | 🟡 **MED** |
 
 ### Red Flags
 
 | Flag | Severity | Concern |
 |:-----|:--------:|:--------|
-| No written contract for split | 🔴 High | Breach claim relies on oral agreement |
+| No written contract for split/salary | 🔴 High | Breach claim relies on oral agreement |
+| IS refuses to provide accounting | 🔴 High | Total damages cannot be calculated |
 | 1099 loan claim undocumented | 🔴 High | Without proof, classification stands |
-| Gwinnett incident uncorroborated | 🔴 High | Need third-party witnesses |
+| Gwinnett defamation — slander per se | 🔴 High | Accusation of crime (stealing) to third parties |
+| ~$85K unexplained 2023 1099 charges | 🔴 High | Significant tax liability with no supporting detail |
+| GCS business relationship destroyed | 🔴 High | $400K–$600K annual + $750K–$1M future revenue lost |
 | Jurisdiction complexity (GA/AL/Fed) | 🟡 Med | Multi-forum litigation risk |
-| IS may counter-claim re: June 11 invoice | 🟡 Med | Accidental send may be used against plaintiff |
-| Sami credibility — lawyer present | 🟡 Med | Suggests planned escalation |
+| Employee vs. 1099 misclassification | 🟡 Med | IS controlled manner of work (credit card, equipment) |
+| PO transfer difficulties at GCS | 🟡 Med | End-of-year set-aside classification complicates transfer |
+| IS may counter-claim re: POs worked | 🟡 Med | Troy continued 2 POs outside Ali's stated list |
 | Partnership characterization unclear | 🟡 Med | JV vs. contractor vs. partnership affects claims |
 
 ---
