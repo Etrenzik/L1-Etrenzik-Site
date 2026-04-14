@@ -6,6 +6,9 @@ import { Menu, X } from "lucide-react";
 
 const learnLinks = [
   { label: "Architecture", href: "/learn/architecture" },
+  { label: "Flow Tree", href: "/learn/flow-tree" },
+  { label: "What You Can Build", href: "/learn/capabilities" },
+  { label: "Ecosystem", href: "/learn/ecosystem" },
   { label: "Cosmos SDK", href: "/learn/cosmos-sdk" },
   { label: "Smart Contracts", href: "/learn/smart-contracts" },
   { label: "Namespaces", href: "/learn/namespaces" },

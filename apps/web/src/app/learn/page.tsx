@@ -16,6 +16,27 @@ const topics = [
       "Understand the 5-layer platform architecture from consensus to AI",
   },
   {
+    icon: "🌳",
+    title: "Flow Tree",
+    href: "/learn/flow-tree",
+    description:
+      "Step-by-step walkthrough of how data flows through every layer of the chain",
+  },
+  {
+    icon: "🏗️",
+    title: "What You Can Build",
+    href: "/learn/capabilities",
+    description:
+      "Bracket system of 40+ buildable primitives — NFTs, RWA, DeFi, AI, and more",
+  },
+  {
+    icon: "🌐",
+    title: "Ecosystem",
+    href: "/learn/ecosystem",
+    description:
+      "Everything built so far and all development possibilities ahead",
+  },
+  {
     icon: "🔧",
     title: "Cosmos SDK",
     href: "/learn/cosmos-sdk",
