@@ -1,5 +1,5 @@
 import type { FastifyInstance } from "fastify";
-import { prisma } from "@l1-etrenzik/db";
+import { prisma } from "@etrenzik-case/db";
 
 export async function workflowRoutes(app: FastifyInstance) {
   // List workflow definitions

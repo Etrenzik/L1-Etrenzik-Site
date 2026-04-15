@@ -8,7 +8,7 @@ COPY packages/shared/package.json packages/shared/
 COPY packages/rag/package.json packages/rag/
 COPY packages/workflows/package.json packages/workflows/
 COPY packages/mcp/package.json packages/mcp/
-RUN npm install --workspace=@l1-etrenzik/worker
+RUN npm install --workspace=@etrenzik-case/worker
 
 COPY packages packages
 COPY apps/worker apps/worker

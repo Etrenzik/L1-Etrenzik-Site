@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
-import { prisma } from "@l1-etrenzik/db";
-import { MCPRegistry } from "@l1-etrenzik/mcp";
-import type { WorkflowDefinition, WorkflowEvent } from "@l1-etrenzik/core";
+import { prisma } from "@etrenzik-case/db";
+import { MCPRegistry } from "@etrenzik-case/mcp";
+import type { WorkflowDefinition, WorkflowEvent } from "@etrenzik-case/core";
 
 /**
  * Central workflow orchestrator — routes tasks to tools/agents.

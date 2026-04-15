@@ -15,14 +15,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Etrenzik L1 — Learn to Build on the Etrenzik Blockchain",
+  title: "Etrenzik LLC v. Inergy Solutions, LLC — Litigation Case Workspace",
   description:
-    "Educational hub for the Etrenzik sovereign Layer 1 blockchain. Learn about Cosmos SDK, CosmWasm smart contracts, AI orchestration, namespaces, NFTs, stablecoins, and more.",
+    "Private litigation workspace for Etrenzik LLC v. Inergy Solutions, LLC. Evidence management, timeline reconstruction, invoice reconciliation, and complaint drafting.",
   openGraph: {
-    title: "Etrenzik L1 — Learn to Build",
-    description: "Educational hub for the Etrenzik sovereign Layer 1 blockchain.",
-    url: "https://l1.etrenzik.com",
-    siteName: "Etrenzik L1",
+    title: "Etrenzik LLC v. Inergy Solutions — Case Workspace",
+    description: "Private litigation workspace — draft work product, not legal advice.",
+    url: "https://case.etrenzik.com",
+    siteName: "Etrenzik Case Portal",
     type: "website",
   },
 };

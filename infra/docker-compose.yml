@@ -1,10 +1,10 @@
-# L1-ETRENZIK Litigation Workspace — Docker Compose
+# ETRENZIK-CASE Litigation Workspace — Docker Compose
 # DRAFT WORK PRODUCT — NOT LEGAL ADVICE
 
 services:
   postgres:
     image: pgvector/pgvector:pg16
-    container_name: l1-etrenzik-postgres
+    container_name: ETRENZIK-CASE-postgres
     restart: unless-stopped
     environment:
       POSTGRES_USER: postgres
@@ -22,7 +22,7 @@ services:
 
   redis:
     image: redis:7-alpine
-    container_name: l1-etrenzik-redis
+    container_name: ETRENZIK-CASE-redis
     restart: unless-stopped
     ports:
       - "6379:6379"
@@ -38,7 +38,7 @@ services:
     build:
       context: ..
       dockerfile: infra/Dockerfile.api
-    container_name: l1-etrenzik-api
+    container_name: ETRENZIK-CASE-api
     restart: unless-stopped
     ports:
       - "4000:4000"
@@ -60,7 +60,7 @@ services:
     build:
       context: ..
       dockerfile: infra/Dockerfile.worker
-    container_name: l1-etrenzik-worker
+    container_name: ETRENZIK-CASE-worker
     restart: unless-stopped
     environment:
       DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/l1_etrenzik?schema=public"

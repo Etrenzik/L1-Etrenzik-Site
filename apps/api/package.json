@@ -1,5 +1,5 @@
 {
-  "name": "@l1-etrenzik/api",
+  "name": "@etrenzik-case/api",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,9 +11,9 @@
     "clean": "rimraf dist .turbo"
   },
   "dependencies": {
-    "@l1-etrenzik/core": "*",
-    "@l1-etrenzik/db": "*",
-    "@l1-etrenzik/shared": "*",
+    "@etrenzik-case/core": "*",
+    "@etrenzik-case/db": "*",
+    "@etrenzik-case/shared": "*",
     "fastify": "^5.1.0",
     "@fastify/cors": "^10.0.0",
     "@fastify/multipart": "^9.0.0",

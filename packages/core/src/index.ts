@@ -1,5 +1,5 @@
 /**
- * @l1-etrenzik/core
+ * @etrenzik-case/core
  * Domain types, schemas, and guardrails for the litigation workspace.
  * DRAFT WORK PRODUCT — NOT LEGAL ADVICE
  */

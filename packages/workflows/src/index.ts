@@ -1,5 +1,5 @@
 /**
- * @l1-etrenzik/workflows
+ * @etrenzik-case/workflows
  * Workflow orchestrator and case-specific workflows
  * DRAFT WORK PRODUCT — NOT LEGAL ADVICE
  */

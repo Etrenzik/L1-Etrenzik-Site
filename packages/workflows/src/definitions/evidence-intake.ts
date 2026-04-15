@@ -1,4 +1,4 @@
-import type { WorkflowDefinition } from "@l1-etrenzik/core";
+import type { WorkflowDefinition } from "@etrenzik-case/core";
 
 /**
  * Evidence Intake Workflow

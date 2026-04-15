@@ -1,5 +1,5 @@
 import type { FastifyInstance } from "fastify";
-import { prisma } from "@l1-etrenzik/db";
+import { prisma } from "@etrenzik-case/db";
 import { z } from "zod";
 
 const CreateCaseSchema = z.object({

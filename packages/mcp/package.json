@@ -1,5 +1,5 @@
 {
-  "name": "@l1-etrenzik/mcp",
+  "name": "@etrenzik-case/mcp",
   "version": "0.1.0",
   "private": true,
   "main": "src/index.ts",
@@ -11,8 +11,8 @@
     "clean": "rimraf dist .turbo"
   },
   "dependencies": {
-    "@l1-etrenzik/core": "*",
-    "@l1-etrenzik/db": "*",
+    "@etrenzik-case/core": "*",
+    "@etrenzik-case/db": "*",
     "zod": "^3.23.0",
     "uuid": "^10.0.0"
   },

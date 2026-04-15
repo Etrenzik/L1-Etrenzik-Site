@@ -1,5 +1,5 @@
 {
-  "name": "@l1-etrenzik/core",
+  "name": "@etrenzik-case/core",
   "version": "0.1.0",
   "private": true,
   "main": "src/index.ts",

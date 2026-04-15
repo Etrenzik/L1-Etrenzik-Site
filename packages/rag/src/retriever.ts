@@ -1,4 +1,4 @@
-import { prisma } from "@l1-etrenzik/db";
+import { prisma } from "@etrenzik-case/db";
 import type { RetrievalResult, IndexType } from "./types.js";
 
 /**

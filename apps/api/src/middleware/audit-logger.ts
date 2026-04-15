@@ -1,5 +1,5 @@
 import type { FastifyRequest, FastifyReply } from "fastify";
-import { prisma } from "@l1-etrenzik/db";
+import { prisma } from "@etrenzik-case/db";
 
 export async function auditLogger(request: FastifyRequest, _reply: FastifyReply) {
   if (request.url === "/health") return;

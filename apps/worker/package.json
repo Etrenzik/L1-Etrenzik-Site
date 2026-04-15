@@ -1,5 +1,5 @@
 {
-  "name": "@l1-etrenzik/worker",
+  "name": "@etrenzik-case/worker",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,11 +11,11 @@
     "clean": "rimraf dist .turbo"
   },
   "dependencies": {
-    "@l1-etrenzik/core": "*",
-    "@l1-etrenzik/db": "*",
-    "@l1-etrenzik/shared": "*",
-    "@l1-etrenzik/rag": "*",
-    "@l1-etrenzik/workflows": "*",
+    "@etrenzik-case/core": "*",
+    "@etrenzik-case/db": "*",
+    "@etrenzik-case/shared": "*",
+    "@etrenzik-case/rag": "*",
+    "@etrenzik-case/workflows": "*",
     "bullmq": "^5.25.0",
     "ioredis": "^5.4.0",
     "pino": "^9.6.0",

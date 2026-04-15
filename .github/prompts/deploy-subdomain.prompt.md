@@ -26,7 +26,7 @@ Create `apps/web/vercel.json`:
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
-  "buildCommand": "cd ../.. && npx turbo run build --filter=@l1-etrenzik/web",
+  "buildCommand": "cd ../.. && npx turbo run build --filter=@etrenzik-case/web",
   "installCommand": "cd ../.. && npm install",
   "outputDirectory": ".next",
   "rewrites": [

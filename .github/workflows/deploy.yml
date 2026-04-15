@@ -16,7 +16,7 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - run: npx turbo run lint --filter=@l1-etrenzik/web
+      - run: npx turbo run lint --filter=@etrenzik-case/web
       - run: npx turbo run test || true
 
   deploy:
@@ -37,7 +37,7 @@ jobs:
         run: npm ci
 
       - name: Build web app
-        run: npx turbo run build --filter=@l1-etrenzik/web
+        run: npx turbo run build --filter=@etrenzik-case/web
         env:
           NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL || 'https://case-api.etrenzik.com' }}
           NEXT_PUBLIC_SITE_URL: https://case.etrenzik.com

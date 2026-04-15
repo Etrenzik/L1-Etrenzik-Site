@@ -1,5 +1,5 @@
 {
-  "name": "l1-etrenzik",
+  "name": "ETRENZIK-CASE",
   "version": "0.1.0",
   "private": true,
   "workspaces": [
@@ -11,10 +11,10 @@
     "build": "turbo run build",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "db:generate": "npm run generate --workspace=@l1-etrenzik/db",
-    "db:push": "npm run push --workspace=@l1-etrenzik/db",
-    "db:migrate": "npm run migrate --workspace=@l1-etrenzik/db",
-    "db:seed": "npm run seed --workspace=@l1-etrenzik/db",
+    "db:generate": "npm run generate --workspace=@etrenzik-case/db",
+    "db:push": "npm run push --workspace=@etrenzik-case/db",
+    "db:migrate": "npm run migrate --workspace=@etrenzik-case/db",
+    "db:seed": "npm run seed --workspace=@etrenzik-case/db",
     "docker:up": "docker compose -f infra/docker-compose.yml up -d",
     "docker:down": "docker compose -f infra/docker-compose.yml down",
     "clean": "turbo run clean && rimraf node_modules"

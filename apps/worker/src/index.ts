@@ -1,5 +1,5 @@
 /**
- * L1-ETRENZIK Background Worker
+ * ETRENZIK-CASE Background Worker
  * DRAFT WORK PRODUCT — NOT LEGAL ADVICE
  * Processes document ingestion, embeddings, reconciliation, and draft generation.
  */
@@ -14,7 +14,7 @@ const connection = new IORedis(process.env.REDIS_URL ?? "redis://localhost:6379"
   maxRetriesPerRequest: null,
 });
 
-const QUEUE_PREFIX = process.env.WORKER_QUEUE_PREFIX ?? "l1-etrenzik";
+const QUEUE_PREFIX = process.env.WORKER_QUEUE_PREFIX ?? "ETRENZIK-CASE";
 const CONCURRENCY = parseInt(process.env.WORKER_CONCURRENCY ?? "5", 10);
 
 // Queue definitions

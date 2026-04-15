@@ -1,5 +1,5 @@
 {
-  "name": "@l1-etrenzik/workflows",
+  "name": "@etrenzik-case/workflows",
   "version": "0.1.0",
   "private": true,
   "main": "src/index.ts",
@@ -11,9 +11,9 @@
     "clean": "rimraf dist .turbo"
   },
   "dependencies": {
-    "@l1-etrenzik/core": "*",
-    "@l1-etrenzik/db": "*",
-    "@l1-etrenzik/mcp": "*",
+    "@etrenzik-case/core": "*",
+    "@etrenzik-case/db": "*",
+    "@etrenzik-case/mcp": "*",
     "zod": "^3.23.0",
     "uuid": "^10.0.0"
   },

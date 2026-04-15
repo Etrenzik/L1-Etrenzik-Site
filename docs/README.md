@@ -1,4 +1,4 @@
-# L1-ETRENZIK — Litigation Workspace
+# ETRENZIK-CASE — Litigation Workspace
 
 > **DRAFT WORK PRODUCT — NOT LEGAL ADVICE**
 > This system is a research and document-preparation workspace. All outputs are drafts for attorney review. Nothing produced by this system constitutes legal advice or a legal opinion.
@@ -34,7 +34,7 @@ npm run dev
 ## Architecture
 
 ```
-l1-etrenzik/
+ETRENZIK-CASE/
 ├── apps/
 │   ├── api/           # Fastify REST API (port 4000)
 │   ├── web/           # Next.js dashboard (port 3000)

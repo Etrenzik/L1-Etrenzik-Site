@@ -1,4 +1,4 @@
-name = "l1-etrenzik-site"
+name = "ETRENZIK-CASE-site"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = "apps/web/out"

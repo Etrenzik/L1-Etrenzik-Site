@@ -1,4 +1,4 @@
-import { SYSTEM_RULES } from "@l1-etrenzik/core";
+import { SYSTEM_RULES } from "@etrenzik-case/core";
 
 interface DemandLetterInput {
   plaintiff: string;

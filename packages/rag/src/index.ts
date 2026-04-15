@@ -1,5 +1,5 @@
 /**
- * @l1-etrenzik/rag
+ * @etrenzik-case/rag
  * RAG subsystem — document ingestion, chunking, retrieval
  * DRAFT WORK PRODUCT — NOT LEGAL ADVICE
  */

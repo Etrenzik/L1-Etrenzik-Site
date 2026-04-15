@@ -1,4 +1,4 @@
-import { prisma } from "@l1-etrenzik/db";
+import { prisma } from "@etrenzik-case/db";
 import { Chunker } from "./chunker.js";
 import { v4 as uuid } from "uuid";
 

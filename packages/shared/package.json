@@ -1,5 +1,5 @@
 {
-  "name": "@l1-etrenzik/shared",
+  "name": "@etrenzik-case/shared",
   "version": "0.1.0",
   "private": true,
   "main": "src/index.ts",

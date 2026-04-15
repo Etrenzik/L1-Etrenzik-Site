@@ -1,5 +1,5 @@
 /**
- * @l1-etrenzik/accounting
+ * @etrenzik-case/accounting
  * Accounting reconciliation and damages computation
  * DRAFT WORK PRODUCT — NOT LEGAL ADVICE
  */

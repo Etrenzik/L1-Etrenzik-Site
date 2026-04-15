@@ -1,5 +1,5 @@
 /**
- * @l1-etrenzik/shared
+ * @etrenzik-case/shared
  * Shared utilities, constants, and API types
  * DRAFT WORK PRODUCT — NOT LEGAL ADVICE
  */

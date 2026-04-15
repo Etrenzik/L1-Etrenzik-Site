@@ -1,4 +1,4 @@
-import { SYSTEM_RULES, checkProhibitedContent } from "@l1-etrenzik/core";
+import { SYSTEM_RULES, checkProhibitedContent } from "@etrenzik-case/core";
 
 interface ComplaintInput {
   plaintiff: string;

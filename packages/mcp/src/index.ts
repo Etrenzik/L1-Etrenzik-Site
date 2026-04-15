@@ -1,5 +1,5 @@
 /**
- * @l1-etrenzik/mcp
+ * @etrenzik-case/mcp
  * MCP Tool Registry and base tool infrastructure
  * DRAFT WORK PRODUCT — NOT LEGAL ADVICE
  */

@@ -181,7 +181,7 @@ flowchart LR
 ## 📦 Monorepo Structure
 
 ```
-l1-etrenzik/
+ETRENZIK-CASE/
 │
 ├── 📱 apps/
 │   ├── api/                    # ⚡ Fastify 5 REST API

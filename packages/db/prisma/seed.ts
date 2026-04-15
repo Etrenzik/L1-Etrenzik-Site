@@ -1,5 +1,5 @@
 /**
- * L1-ETRENZIK Database Seed
+ * ETRENZIK-CASE Database Seed
  * DRAFT WORK PRODUCT — NOT LEGAL ADVICE
  *
  * Seeds the database with initial case data for Etrenzik LLC v. Inergy Solutions, LLC.

@@ -1,5 +1,5 @@
 import type { FastifyInstance } from "fastify";
-import { prisma } from "@l1-etrenzik/db";
+import { prisma } from "@etrenzik-case/db";
 import { config } from "../config.js";
 import { randomUUID } from "crypto";
 import { pipeline } from "stream/promises";

@@ -7,7 +7,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <header className="bg-white border-b px-4 py-3">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <h1 className="font-bold text-lg">L1-Etrenzik</h1>
+            <h1 className="font-bold text-lg">Etrenzik v. Inergy Solutions</h1>
             <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded">
               DRAFT WORK PRODUCT
             </span>

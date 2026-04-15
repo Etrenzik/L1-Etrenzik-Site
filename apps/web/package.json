@@ -1,5 +1,5 @@
 {
-  "name": "@l1-etrenzik/web",
+  "name": "@etrenzik-case/web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
     "clean": "rimraf .next .turbo"
   },
   "dependencies": {
-    "@l1-etrenzik/shared": "*",
+    "@etrenzik-case/shared": "*",
     "next": "16.2.3",
     "react": "19.2.4",
     "react-dom": "19.2.4",
