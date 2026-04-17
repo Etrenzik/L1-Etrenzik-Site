@@ -1,7 +1,7 @@
-name = "etrenzik-case-site"
+name = "l1-etrenzik"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = "apps/web/out"
 
 [vars]
-NEXT_PUBLIC_SITE_URL = "https://case.etrenzik.com"
+NEXT_PUBLIC_SITE_URL = "https://l1.etrenzik.com"
